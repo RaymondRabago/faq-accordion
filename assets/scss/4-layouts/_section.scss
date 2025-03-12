@@ -1,0 +1,49 @@
+.container {
+    background-color: $clr-white;
+    margin: 0 auto;
+
+    border-radius: 15px;
+    box-shadow: $box-shadow;
+
+    // DeskResponsive (>= 768px)
+    @include min-break($tablet) {
+        padding: 42px 40px 20px;
+        width: 100%;
+        max-width: 570px;
+    }
+
+    // TabletResponsive (>= 501px && <= 767px)
+    @include between-break($phablet, $tablet) {
+        padding: 30px 25px 25px;
+        max-width: 450px;
+    }
+
+    // MobResponsive (<= 500px) 
+    @include max-break($phablet) {
+        padding: 30px 25px 25px;
+        width: calc(100% - 50px);
+    }
+}
+
+.container > .heading {
+    display: flex;
+    align-items: center;
+
+    .icon {
+        margin-right: 20px;
+    }
+
+    .title {
+        color: $clr-dark-purple;
+        font-weight: 700;
+    }
+
+    // MobResponsive ( <= 500px)
+    @include max-break($phablet) {
+        .icon {
+            width: 30px;
+            height: 31px
+        }
+    }
+
+}

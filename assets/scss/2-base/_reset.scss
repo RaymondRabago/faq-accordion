@@ -1,0 +1,89 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding and outline */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+
+    outline: none;
+    outline-width: 0;
+    outline-style: none;
+    outline-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Make images easier to work with */
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* Make buttons and links have pointer cursor */
+a, button {
+    cursor: pointer;
+}
+
+/* Remove default text decoration on links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Make sure tables have borders by default */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}  
+
+/* Remove mouse interactions for svg */
+svg {
+    pointer-events: none;
+    vertical-align: middle;
+}
+
+/* Remove the resize handle on textareas */
+textarea {
+    resize: none;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* CUSTOM: Add default body background color */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* CUSTOM: Add scroll margin top */
+* {
+    scroll-margin-top: 0;
+}
+
+
+
+

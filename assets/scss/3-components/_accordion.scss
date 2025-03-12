@@ -1,0 +1,106 @@
+/* Accordion wrapper */ 
+.accordions {
+    .accordion:not(:first-of-type) {
+        border-top: 1px solid rgba($clr-gray-purple, 0.2);
+    }
+}
+
+.accordion {
+
+    // DeskResponsive (>= 501px)
+    @include min-break($phablet) {
+        padding: 27px 0;
+    }
+
+    // MobResponsive (<= 500px) 
+    @include max-break($phablet) {
+        padding: 25px 0;
+    }
+}
+
+// Title (or question) of the accordion
+.accordion .title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: 2px dashed transparent;
+    cursor: pointer;
+    transition: outline 0.4s ease;
+   
+
+    span {
+        text-align: left;
+        font-weight: 700;
+        color: $clr-dark-purple;
+        padding-right: 10px;
+        transition: all 0.4s ease-in-out;
+    }
+
+    svg {
+        min-width: 30px;
+    }
+    
+    .close {
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.4s;
+    }
+
+    &:hover,
+    &:focus {
+        span {
+            color: rgba($clr-dark-purple, 0.8);
+        }        
+    }
+
+    &:focus-visible {
+        outline-color: $clr-gray-purple;
+
+    }
+}
+
+// Content (or answer) of the accordion
+.accordion .content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all 0.4s ease-in-out;
+
+    & > .inner {
+        padding-top: 20px;
+        overflow: hidden;
+
+        & > * {
+            color: $clr-gray-purple;
+        }
+    
+        & > *:not(:first-of-type) {
+            margin-top: 15px;
+        }
+    }
+
+    // Setup negative margin for all browser (not firefox)
+    @include not-firefox {
+        margin-bottom: -20px;
+    }
+
+}
+
+// Active state of the accordion
+.accordion.active .title {
+    .close {
+        z-index: 1;
+        opacity: 1;
+    }
+}
+
+.accordion.active .content {
+    grid-template-rows: 1fr;
+    margin-bottom: 0;
+}

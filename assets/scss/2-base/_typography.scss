@@ -1,0 +1,28 @@
+/* Default font styles for the body */
+body {
+  font-family: $font-body;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+/* Default font styles for the headings */
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6, 
+.font-heading {
+  font-family: $font-heading;
+  line-height: 1.2; 
+}
+
+// MobResponsive ( <= 500px)
+@include max-break($phablet) {
+  h1, .h1 {
+    font-size: 2rem;
+  }
+}
+
+// DeskResponsive ( >= 501px)
+@include min-break($phablet) {
+  h1, .h1 {
+    font-size: 3.4375rem;
+  }
+}

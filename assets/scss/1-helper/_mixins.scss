@@ -1,0 +1,76 @@
+/* Minus 0.02 to the max-width/desktop breakpoints is based on: 
+https://getbootstrap.com/docs/5.0/layout/breakpoints/
+*/
+
+/* Mixin for min-width breakpoints */
+@mixin min-break($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+/* Mixin for max-width breakpoints */
+@mixin max-break($breakpoint) {
+    @media (max-width: #{ $breakpoint - 0.02 }) {
+        @content;
+    }
+}
+
+/* Mixin for min-width and max-width breakpoints */
+@mixin between-break($min, $max) {
+  @media (min-width: $min) and (max-width: #{ $max - 0.02 }) {
+    @content;
+  }
+}
+
+/* Mixin for adding style not in firefox browser */ 
+@mixin not-firefox {
+  @supports not (-moz-appearance: none) {
+    @content;
+  }
+}
+
+/* Mixin for adding style in firefox browser */ 
+@mixin firefox-only {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+/* Mixin for font-face */
+@mixin font-face($font-name, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: #{$font-name};
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+         url('#{$file-path}.woff2') format('woff2'),
+         url('#{$file-path}.woff') format('woff'),
+         url('#{$file-path}.ttf') format('truetype'),
+         url('#{$file-path}.svg##{$font-name}') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+/* Mixin for overlay */
+@mixin overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Mixin for ellipsis with line clamp */
+@mixin ellipsis($lines: 3) {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+}
+ 

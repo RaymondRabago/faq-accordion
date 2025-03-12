@@ -1,0 +1,16 @@
+main {
+    position: relative;
+    z-index: 1;
+
+    // DeskResponsive ( >= 501px)
+    @include min-break($phablet) {
+        padding-bottom: 130px;
+        margin-top: -150px;
+    }
+
+    // MobResponsive ( <= 500px) {
+    @include max-break($phablet) {
+        padding-bottom: 50px;
+        margin-top: -95px;
+    }
+}

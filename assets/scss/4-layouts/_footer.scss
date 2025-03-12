@@ -1,0 +1,18 @@
+.attribution {
+    width: 100%;
+    padding: 10px 0;
+    line-height: 1.2;
+
+    &, a {
+        color: $clr-dark-purple;
+    }
+
+    a {
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+            color: $clr-gray-purple;
+        }
+    }
+
+}

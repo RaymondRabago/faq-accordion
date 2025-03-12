@@ -1,0 +1,27 @@
+/* Container */
+$container: 1140px;
+$container-wide: 1340px; 
+
+/* Breakpoints */
+$mobile: 375px;
+$phablet: 500px;
+$tablet: 768px;
+$desktop: 992px;
+$large-desktop: 1200px;
+$xl-desktop: 1400px;
+$xxl-desktop: 1600px;
+
+/* Font - Familys */
+$font-primary:  "Work Sans", sans-serif;
+
+/* Font - Usages */ 
+$font-heading: $font-primary;
+$font-body: $font-primary;
+
+/* Colors */ 
+$clr-white: #FFFFFF;
+$clr-light-pink: hsl(275, 100%, 97%);
+$clr-gray-purple: hsl(292, 16%, 49%);
+$clr-dark-purple: hsl(292, 42%, 14%);
+
+$box-shadow: 0px 3px 24px -4px rgba(53,26,75,0.5);;

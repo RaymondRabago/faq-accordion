@@ -1,0 +1,15 @@
+.banner {
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    // DeskResponive (>= 375px) 
+    @include min-break($phablet) {
+        &, img {
+            height: 300px;
+            max-height: 300px;
+        }
+    }
+
+}

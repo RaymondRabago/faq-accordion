@@ -1,48 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>FAQ Accordion | Raymond Rabago</title>
+  <meta name="description" content="An FAQ Accordion built with HTML, CSS, and JavaScript, showcasing my front-end skills, including DOM manipulation and responsive design.">
+  <link rel="canonical" href="https://raymondrabago.github.io/interactive-rating-component/">
+  <link rel="icon" href="https://raymondrabago.github.io/interactive-rating-component/assets/images/favicon.png" type="image/png" sizes="32x32">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | FAQ accordion</title>
+  <!-- OG Cards -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FAQ Accordion | Raymond Rabago" />
+  <meta property="og:description" content="An FAQ Accordion built with HTML, CSS, and JavaScript, showcasing my front-end skills, including DOM manipulation and responsive design." />
+  <meta property="og:url" content="https://raymondrabago.github.io/interactive-rating-component/" />
+  <meta property="og:site_name" content="Raymond Rabago" />
+  <meta property="article:publisher" content="https://raymondrabago.github.io/" />
+  <meta property="article:modified_time" content="latest date modified" />
+  <meta property="og:image" content="https://raymondrabago.github.io/interactive-rating-component/assets/images/interactive-rating-component-og.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="664" />
+  <meta property="og:image:type" content="image/png" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FAQ Accordion | Raymond Rabago" />
+  <meta name="twitter:description" content="An FAQ Accordion built with HTML, CSS, and JavaScript, showcasing my front-end skills, including DOM manipulation and responsive design." />
+  <meta name="twitter:site" content="@projectname" />  
+
+  <!-- Fonts-->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" as="style"> 
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+
+  <!-- Development -->
+  <link rel="preload" href="assets/css/styles.css" as="style">
+  <link rel="stylesheet" href="assets/css/styles.css" media="all">
+
+  <!-- Production -->
+  <!-- <link rel="preload" href="assets/css/styles.min.css" as="style">
+  <link rel="stylesheet" href="assets/css/styles.min.css" media="all"> -->
+
 </head>
 <body>
-
-  FAQs
-
-  What is Frontend Mentor, and how will it help me?
-
-  Frontend Mentor offers realistic coding challenges to help developers improve their 
-  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-  all levels and ideal for portfolio building.
-
-  Is Frontend Mentor free?
-
-  Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
-  option providing access to a range of projects suitable for all skill levels.
-
-  Can I use Frontend Mentor projects in my portfolio?
-
-  Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
-  way to showcase your skills to potential employers!
-
-  How can I get help if I'm stuck on a Frontend Mentor challenge?
   
-  The best place to get help is inside Frontend Mentor's Discord community. There's a help 
-  channel where you can ask questions and seek support from other community members.
+  <header class="banner">
+    <picture>
+      <source media="(min-width:768px)" srcset="assets/images/background-pattern-desktop.svg" type="image/svg+xml" width="1440" height="320">
+      <source media="(max-width:767px)" srcset="assets/images/background-pattern-mobile.svg" type="image/svg+xml" width="375" height="375">
+      <img src="assets/images/background-pattern-desktop.svg" alt="FAQ Accordion" width="375" height="375">
+    </picture>
+  </header>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main>
+
+    <section class="container">
+
+      <div class="heading">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="40" height="41" fill="none" viewBox="0 0 40 41"><path fill="#AD28EB" d="M37.5 20.5a2.467 2.467 0 0 1-1.64 2.344l-9.913 3.604-3.603 9.911a2.5 2.5 0 0 1-4.688 0l-3.604-9.922-9.911-3.593a2.5 2.5 0 0 1 0-4.688l9.921-3.604 3.594-9.911a2.5 2.5 0 0 1 4.688 0l3.604 9.921 9.911 3.594A2.467 2.467 0 0 1 37.5 20.5Z"/></svg>
+        <h1 class="title">FAQs</h1>
+      </div>
+
+      <div class="accordions">
+
+        <article class="accordion js-accordion">
+          <button class="title" aria-expanded="false" aria-controls="accordion-content-1">
+            <span>What is Frontend Mentor, and how will it help me?</span>
+            <svg class="open" xmlns="http://www.w3.org/2000/svg" width="30" height="31" fill="none" viewBox="0 0 30 31"><path fill="#AD28EB" d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.203 12.203 0 0 0 15 3.312Zm4.688 13.124h-3.75v3.75a.938.938 0 0 1-1.876 0v-3.75h-3.75a.938.938 0 0 1 0-1.875h3.75v-3.75a.938.938 0 0 1 1.876 0v3.75h3.75a.938.938 0 0 1 0 1.876Z"/></svg>
+            <svg class="close" xmlns="http://www.w3.org/2000/svg" width="30" height="31" fill="none" viewBox="0 0 30 31"><path fill="#301534" d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.2 12.2 0 0 0 15 3.312Zm4.688 13.124h-9.375a.938.938 0 0 1 0-1.875h9.374a.938.938 0 0 1 0 1.876Z"/></svg>
+          </button>
+          <div class="content" id="accordion-content-1">
+            <div class="inner">
+              <p>Frontend Mentor offers realistic coding challenges to help developers improve their 
+                frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+                all levels and ideal for portfolio building.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="accordion js-accordion">
+          <button class="title" aria-expanded="false" aria-controls="accordion-content-2">
+            <span>Is Frontend Mentor free?</span>
+            <svg class="open" xmlns="http://www.w3.org/2000/svg" width="30" height="31" fill="none" viewBox="0 0 30 31"><path fill="#AD28EB" d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.203 12.203 0 0 0 15 3.312Zm4.688 13.124h-3.75v3.75a.938.938 0 0 1-1.876 0v-3.75h-3.75a.938.938 0 0 1 0-1.875h3.75v-3.75a.938.938 0 0 1 1.876 0v3.75h3.75a.938.938 0 0 1 0 1.876Z"/></svg>
+            <svg class="close" xmlns="http://www.w3.org/2000/svg" width="30" height="31" fill="none" viewBox="0 0 30 31"><path fill="#301534" d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.2 12.2 0 0 0 15 3.312Zm4.688 13.124h-9.375a.938.938 0 0 1 0-1.875h9.374a.938.938 0 0 1 0 1.876Z"/></svg>
+          </button>
+          <div class="content" id="accordion-content-2">
+            <div class="inner">
+              <p>Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+                option providing access to a range of projects suitable for all skill levels.</p>
+            </div>
+          </div> 
+        </article>
+
+        <article class="accordion js-accordion">
+          <button class="title" aria-expanded="false" aria-controls="accordion-content-3">
+            <span>Can I use Frontend Mentor projects in my portfolio?</span>
+            <svg class="open" xmlns="http://www.w3.org/2000/svg" width="30" height="31" fill="none" viewBox="0 0 30 31"><path fill="#AD28EB" d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.203 12.203 0 0 0 15 3.312Zm4.688 13.124h-3.75v3.75a.938.938 0 0 1-1.876 0v-3.75h-3.75a.938.938 0 0 1 0-1.875h3.75v-3.75a.938.938 0 0 1 1.876 0v3.75h3.75a.938.938 0 0 1 0 1.876Z"/></svg>
+            <svg class="close" xmlns="http://www.w3.org/2000/svg" width="30" height="31" fill="none" viewBox="0 0 30 31"><path fill="#301534" d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.2 12.2 0 0 0 15 3.312Zm4.688 13.124h-9.375a.938.938 0 0 1 0-1.875h9.374a.938.938 0 0 1 0 1.876Z"/></svg>
+          </button>
+          <div class="content" id="accordion-content-3">
+              <div class="inner">
+                <p>Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+                  way to showcase your skills to potential employers!</p>
+              </div>  
+          </div>
+        </article> 
+
+        <article class="accordion js-accordion">
+          <button class="title" aria-expanded="false" aria-controls="accordion-content-4">
+            <span>How can I get help if I'm stuck on a Frontend Mentor challenge?</span>
+            <svg class="open" xmlns="http://www.w3.org/2000/svg" width="30" height="31" fill="none" viewBox="0 0 30 31"><path fill="#AD28EB" d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.203 12.203 0 0 0 15 3.312Zm4.688 13.124h-3.75v3.75a.938.938 0 0 1-1.876 0v-3.75h-3.75a.938.938 0 0 1 0-1.875h3.75v-3.75a.938.938 0 0 1 1.876 0v3.75h3.75a.938.938 0 0 1 0 1.876Z"/></svg>
+            <svg class="close" xmlns="http://www.w3.org/2000/svg" width="30" height="31" fill="none" viewBox="0 0 30 31"><path fill="#301534" d="M15 3.313A12.187 12.187 0 1 0 27.188 15.5 12.2 12.2 0 0 0 15 3.312Zm4.688 13.124h-9.375a.938.938 0 0 1 0-1.875h9.374a.938.938 0 0 1 0 1.876Z"/></svg>
+          </button>
+          <div class="content" id="accordion-content-4">
+            <div class="inner">
+              <p>The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+            </div>  
+          </div>
+        </article>  
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="attribution text-center">
+    Challenge by <a href="https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://raymondrabago.github.io/" target="_blank">Raymond Rabago</a>.
+  </footer>
+
+  <!-- Development -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Production -->
+  <!-- <script src="assets/js/main.min.js" defer></script> -->
 </body>
 </html>
