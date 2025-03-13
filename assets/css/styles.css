@@ -28,10 +28,11 @@ https://getbootstrap.com/docs/5.0/layout/breakpoints/
   margin: 0;
   padding: 0;
   font: inherit;
-  outline: none;
-  outline-width: 0;
-  outline-style: none;
-  outline-color: transparent;
+  outline: 2px dashed transparent;
+  outline-offset: 3px;
+}
+*:focus-visible {
+  outline-color: hsl(292, 16%, 49%);
 }
 
 html {
@@ -191,7 +192,6 @@ h1, h2, h3, h4, h5, h6,
   width: 100%;
   background-color: transparent;
   border: 0;
-  outline: 2px dashed transparent;
   cursor: pointer;
   -webkit-transition: outline 0.4s ease;
   transition: outline 0.4s ease;
@@ -217,9 +217,6 @@ h1, h2, h3, h4, h5, h6,
 }
 .accordion .title:hover span, .accordion .title:focus span {
   color: rgba(46.6956, 20.706, 50.694, 0.8);
-}
-.accordion .title:focus-visible {
-  outline-color: hsl(292, 16%, 49%);
 }
 
 .accordion .content {
