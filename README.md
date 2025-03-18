@@ -61,12 +61,16 @@ I learned to use ```outline``` to highlight keyboard-accessible elements, improv
 
 Here is the implementation: 
 ```css
-* { /* Establish a default outline style for all elements, which will not affect layout or spacing */
+/* Establish a default outline style for all elements, 
+** which will not affect layout or spacing */
+* { 
     outline: 2px dashed transparent;
     outline-offset: 3px;
 }
 
-*:focus-visible { /* Add color to the outline when the element has focus due to keyboard navigation */ 
+/* Add color to the outline when the element 
+** has focus due to keyboard navigation */ 
+*:focus-visible { 
     outline-color: hsl(292, 16%, 49%);
 }
 ```
