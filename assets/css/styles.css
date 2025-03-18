@@ -233,6 +233,7 @@ h1, h2, h3, h4, h5, h6,
 }
 .accordion .content > .inner > * {
   color: hsl(292, 16%, 49%);
+  line-height: 1.4;
 }
 .accordion .content > .inner > *:not(:first-of-type) {
   margin-top: 15px;
@@ -335,10 +336,16 @@ main {
   color: hsl(292, 42%, 14%);
   font-weight: 700;
 }
+@media (min-width: 500px) {
+  .container > .heading .icon {
+    margin-right: 20px;
+  }
+}
 @media (max-width: 499.98px) {
   .container > .heading .icon {
-    width: 30px;
-    height: 31px;
+    width: 24px;
+    height: 25px;
+    margin-right: 15px;
   }
 }
 

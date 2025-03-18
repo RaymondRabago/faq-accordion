@@ -38,11 +38,19 @@
         font-weight: 700;
     }
 
+    // DeskResponsive ( >= 501px)
+    @include min-break($phablet) {
+        .icon {
+            margin-right: 20px;
+        }
+    }
+
     // MobResponsive ( <= 500px)
     @include max-break($phablet) {
         .icon {
-            width: 30px;
-            height: 31px
+            width: 24px;
+            height: 25px;
+            margin-right: 15px;
         }
     }
 
